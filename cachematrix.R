@@ -3,10 +3,19 @@
 
 ## Write a short comment describing this function
 
-makeCacheMatrix <- function(x = matrix()) {
-
+makeCacheMatrix <- function(x= matrix()){
+        i <- NULL
+        setM <- function(y){ 
+                x <<- y
+                i <<- NULL
+        }
+        getM <- function() x
+        setIn <- function(Inv) i<<-Inv
+        getIn <- function() i
+        list(setM = setM, getM = getM,
+             setIn = setIn,
+             getIn = getIn)
 }
-
 
 ## Write a short comment describing this function
 
